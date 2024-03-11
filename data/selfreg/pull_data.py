@@ -17,9 +17,9 @@ func_include = [
 	f'{s}/{se}/func/{s}_{se}_{t}*' for s, se, t in zip(subj, ses, task)
 ]
 # include anat
-anat_include = [f'{s}/ses-1/anat/*' for s in subj.unique()]
+anat_include = [f'{s}/*/anat/*' for s in subj.unique()]
 # include fieldmaps
-fmap_include = [f'{s}/ses-1/fmap/*' for s in subj.unique()]
+fmap_include = [f'{s}/*/fmap/*' for s in subj.unique()]
 include = func_include + anat_include + fmap_include
 
 on.download(dataset=ds_num, tag=tag_num, include=include)
