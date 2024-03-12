@@ -21,6 +21,8 @@ anat_include = [f'{s}/*/anat/*' for s in subj.unique()]
 # include fieldmaps
 fmap_include = [f'{s}/*/fmap/*' for s in subj.unique()]
 include = func_include + anat_include + fmap_include
+# pull metadata
+include += ['/*.json']
 
 on.download(dataset=ds_num, tag=tag_num, include=include)
 
